@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header-section">
+                <div class="logo-area">
+                    <div class="logo-icon">📊</div>
+                    <h1>Resume Analyzer</h1>
+                    <div class="subtitle">AI-Powered Resume Processing Platform</div>
+                </div>
+            </div>
+            <p class="description">
+                Upload a ZIP file containing multiple resumes (PDF and DOCX formats) to analyze and extract 
+                key information. Our advanced AI system will generate a downloadable CSV report with extracted data 
+                including names, contact information, qualifications, and institutions.
+            </p>
+            
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="file-input-container">
+                    <label for="fileInput" class="file-label">
+                        <span class="file-icon">📁</span>
+                        <span class="file-text">Choose ZIP file</span>
+                    </label>
+                    <input type="file" id="fileInput" name="file" accept=".zip" required>
+                    <div class="file-name" id="fileName"></div>
+                </div>
+                
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span class="btn-text">Analyze & Download CSV</span>
+                    <span class="btn-spinner" id="spinner"></span>
+                </button>
+            </form>
+            
+            <div class="status-message" id="statusMessage"></div>
+            
+            <div class="info-section">
+                <h3>Supported Features:</h3>
+                <ul>
+                    <li>Extracts names, addresses, email addresses, and phone numbers</li>
+                    <li>Identifies last qualification and educational institution</li>
+                    <li>Supports PDF and DOCX resume formats</li>
+                    <li>Uses AI-powered extraction with spaCy NLP fallback</li>
+                    <li>Generates structured CSV reports for easy analysis</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
